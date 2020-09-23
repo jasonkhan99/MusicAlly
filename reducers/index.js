@@ -1,5 +1,5 @@
 import formVisibleReducer from './form-visible-reducer';
-import musicListReducer from './ticket-list-reducer';
+import musicListReducer from './music-list-reducer';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
