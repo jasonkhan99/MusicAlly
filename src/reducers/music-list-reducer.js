@@ -1,4 +1,4 @@
-import * as c from './../actions/ActionTypes';
+import * as c from '../actions/ActionTypes';
 
 export default (state = {}, action) => {
   const { trackName, editName, actName, featureNames, artistNames, releaseName, releaseYear, labelName, labelNumber, trackLength, bpm, format, genre, styles, descriptionTags, id } = action;

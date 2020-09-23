@@ -1,13 +1,13 @@
 import React from "react";
-import { v4 } from 'uuid';
-import PropTypes from "prop-types";
 import ReusableForm from "./ReusableForm";
+import PropTypes from "prop-types";
 
-function NewMusicForm(props){
+function EditMusicForm (props) {
+  const { music } = props;
 
-  function handleNewMusicFormSubmission(event) {
+  function handleEditMusicFormSubmission(event) {
     event.preventDefault();
-    props.onNewMusicCreation({
+    props.onEditMusic({
       trackName: event.target.trackName.value,
       editName: event.target.editName.value,
       actName: event.target.actName.value,
@@ -22,23 +22,22 @@ function NewMusicForm(props){
       format: event.target.format.value,
       genre: event.target.genre.value,
       styles: event.target.styles.value,
-      actName: event.target.actName.value,
-      descriptionTags: event.target.descriptionTags.value,
-      id: v4(),
+      descriptionTags: event.target.descriptionTags.value, 
+      id: music.id
     });
   }
 
   return (
     <React.Fragment>
       <ReusableForm 
-        formSubmissionHandler={handleNewMusicFormSubmission}
-        buttonText="Add Music" />
+        formSubmissionHandler={handleEditMusicFormSubmission}
+        buttonText="Update Music" />
     </React.Fragment>
   );
 }
 
-NewMusicForm.propTypes = {
-  onNewMusicCreation: PropTypes.func
+EditMusicForm.propTypes = {
+  onEditMusic: PropTypes.func
 };
 
-export default NewMusicForm;
+export default EditMusicForm;

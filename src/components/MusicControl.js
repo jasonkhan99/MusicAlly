@@ -5,7 +5,7 @@ import MusicDetail from './MusicDetail';
 import EditMusicForm from './EditMusicForm';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
-import * as a from './../actions';
+import * as a from '../actions';
 
 class MusicControl extends React.Component {
 

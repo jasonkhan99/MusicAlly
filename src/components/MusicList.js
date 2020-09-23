@@ -23,7 +23,6 @@ function MusicList(props){
           format = { props.format }
           genre = { props.genre }
           styles = { props.styles }
-          actName = { props.actName }
           descriptionTags = { props.descriptionTags } 
           id = { music.id }
           key = { music.id } />
@@ -33,8 +32,8 @@ function MusicList(props){
 }
 
 MusicList.propTypes = {
-  musicList = PropTypes.object,
-  onMusicSelection = PropTypes.func
+  musicList: PropTypes.object,
+  onMusicSelection: PropTypes.func
 };
 
 export default MusicList;
