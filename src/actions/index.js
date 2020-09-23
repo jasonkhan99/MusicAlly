@@ -1,4 +1,4 @@
-import * as c from './ActionTypes';
+import * as c from './../actions/ActionTypes';
 
 export const deleteMusic = id => ({
   type: c.DELETE_MUSIC,

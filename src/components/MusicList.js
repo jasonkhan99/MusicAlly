@@ -10,7 +10,7 @@ function MusicList(props){
         return <Music
           whenMusicClicked = { props.onMusicSelection }
           trackName = { music.trackName } 
-          trackEdit = { music.trackEdit }
+          editName = { music.editName }
           actName = { music.actName }
           featureNames = { props.featureNames }
           artistNames = { props.artistNames }

@@ -30,7 +30,7 @@ function ReusableForm(props) {
           name='releaseName'
           placeholder='Album/Release Name' />
         <input
-          type='number'
+          type='text'
           name='releaseYear'
           placeholder='Year' />
         <input
@@ -46,11 +46,11 @@ function ReusableForm(props) {
           name='trackLength'
           placeholder='Run Time' />
         <input
-          type='number'
+          type='text'
           name='bpm'
           placeholder='Beats per Minute' />
         <input
-          type='checkbox'
+          type='text'
           name='format'
           placeholder='Formats' />
         <input

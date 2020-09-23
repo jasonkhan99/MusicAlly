@@ -7,9 +7,21 @@ function MusicDetail(props){
   return (
     <React.Fragment>
       <h1>Music Detail</h1>
-      <h3>{props.trackName} - {props.editName}</h3>
-      <p><em>{props.actName}</em></p>
-      <p><em>{props.releaseName} - {props.releaseYear}</em></p>
+      <h3>{music.trackName}</h3>
+      <h3>{music.editName}</h3>
+      <h3>{music.actName}</h3>
+      <h3>{music.artistNames}</h3>
+      <h3>{music.featureNames}</h3>
+      <h3>{music.releaseName}</h3>
+      <h3>{music.releaseYear}</h3>
+      <h3>{music.labeName}</h3>
+      <h3>{music.labelNumber}</h3>
+      <h3>{music.trackLength}</h3>
+      <h3>{music.bpm}</h3>
+      <h3>{music.format}</h3>
+      <h3>{music.genre}</h3>
+      <h3>{music.styles}</h3>
+      <h3>{music.descriptionTags}</h3>
       <button onClick={ props.onClickingEdit }>Update Music</button>
       <button onClick={()=> onClickingDelete(music.id) }>Delete Music</button>
       <hr/>

@@ -15,7 +15,7 @@ function EditMusicForm (props) {
       artistNames: event.target.artistNames.value,
       releaseName: event.target.releaseName.value,
       releaseYear: event.target.releaseYear.value,
-      labelName: event.target.labeName.value,
+      labelName: event.target.labelName.value,
       labelNumber: event.target.labelNumber.value,
       trackLength: event.target.trackLength.value,
       bpm: event.target.bpm.value,
