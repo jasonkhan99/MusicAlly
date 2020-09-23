@@ -18,6 +18,7 @@ Music.propTypes = {
   trackName: PropTypes.string,
   editName: PropTypes.string,
   actName: PropTypes.string,
+  featureNames: PropTypes.string,
   artistNames: PropTypes.string,
   releaseName: PropTypes.string,
   releaseYear: PropTypes.string,

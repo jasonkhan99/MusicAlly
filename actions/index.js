@@ -10,12 +10,13 @@ export const toggleForm = () => ({
 });
 
 export const addMusic = (music) => {
-  const { trackName, editName, actName, artistNames, releaseName, releaseYear, labelName, labelNumber, trackLength, bpm, format, genre, styles, descriptionTags, id } = music;
+  const { trackName, editName, actName, featureNames, artistNames, releaseName, releaseYear, labelName, labelNumber, trackLength, bpm, format, genre, styles, descriptionTags, id } = music;
   return {
     type: c.ADD_MUSIC,
     trackName: trackName,
     editName: editName,
     actName: actName,
+    featureNames: featureNames,
     artistNames: artistNames,
     releaseName: releaseName,
     releaseYear: releaseYear,

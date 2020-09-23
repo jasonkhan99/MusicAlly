@@ -1,7 +1,7 @@
 import * as c from './../actions/ActionTypes';
 
 export default (state = {}, action) => {
-  const { trackName, editName, actName, artistNames, releaseName, releaseYear, labelName, labelNumber, trackLength, bpm, format, genre, styles, descriptionTags, id } = action;
+  const { trackName, editName, actName, featureNames, artistNames, releaseName, releaseYear, labelName, labelNumber, trackLength, bpm, format, genre, styles, descriptionTags, id } = action;
   switch (action.type) {
   case c.ADD_MUSIC:
     return Object.assign({}, state, {
@@ -9,6 +9,7 @@ export default (state = {}, action) => {
         trackName: trackName,
         editName: editName,
         actName: actName,
+        featureNames: featureNames,
         artistNames: artistNames,
         releaseName: releaseName,
         releaseYear: releaseYear,
