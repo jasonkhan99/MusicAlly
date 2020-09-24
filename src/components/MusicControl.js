@@ -74,10 +74,8 @@ class MusicControl extends React.Component {
   }
 
   handleDeletingMusic = (id) => {
-    const { dispatch } = this.props;
-    const action = a.deleteMusic(id);
-    dispatch(action);
-    this.setState({selectedMusic: null});
+    this.props.firestore.delete({collection: 'musics', doc: id});
+    this.setState({selectedTicket: null});
   }
 
   render(){
