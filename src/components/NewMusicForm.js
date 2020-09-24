@@ -10,7 +10,7 @@ function NewMusicForm(props){
   function addMusicToFirestore(event) {
     event.preventDefault();
     props.onNewMusicCreation();
-    return firestore.collection('music').add(
+    return firestore.collection('musics').add(
       {
         trackName: event.target.trackName.value,
         editName: event.target.editName.value,

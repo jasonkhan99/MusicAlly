@@ -6,6 +6,7 @@ import EditMusicForm from './EditMusicForm';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import * as a from './../actions';
+import { withFirestore } from 'react-redux-firebase';
 
 class MusicControl extends React.Component {
 
@@ -36,9 +37,29 @@ class MusicControl extends React.Component {
     dispatch(action);
   }
 
-  handleChangingSelectedMusic = (id) => {
-    const selectedMusic = this.props.masterMusicList[id];
-    this.setState({selectedMusic: selectedMusic});
+  handleChangingSelectedmusic = (id) => {
+    this.props.firestore.get({collection: 'musics', doc: id}).then((music) => {
+      const firestoreMusic = {
+        trackName: music.get('trackName'),
+        editName: music.get('editName'),
+        actName: music.get('actName'),
+        featureNames: music.get('featureNames'),
+        artistNames: music.get('artistNames'),
+        releaseName: music.get('releaseName'),
+        releaseYear: music.get('releaseYear'),
+        labelName: music.get('labelName'),
+        labelNumber: music.get('labelNumber'),
+        trackLengthMinutes: music.get('trackLengthMinutes'),
+        trackLengthSeconds: music.get('trackLengthSeconds'),
+        bpm: music.get('bpm'),
+        format: music.get('format'),
+        genre: music.get('genre'),
+        styles: music.get('styles'),
+        descriptionTags: music.get('descriptionTags'),
+        id: music.id
+      }
+      this.setState({selectedMusic: firestoreMusic });
+    });
   }
 
   handleEditClick = () => {
@@ -105,4 +126,4 @@ const mapStateToProps = state => {
 
 MusicControl = connect(mapStateToProps)(MusicControl);
 
-export default MusicControl;
+export default withFirestore(MusicControl);
