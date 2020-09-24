@@ -117,6 +117,8 @@ MusicControl.propTypes = {
   masterMusicList: PropTypes.object
 };
 
+// get rid of
+
 const mapStateToProps = state => {
   return {
     masterMusicList: state.masterMusicList,

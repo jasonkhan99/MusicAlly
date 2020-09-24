@@ -1,13 +1,18 @@
 import React from "react";
 import ReusableForm from "./ReusableForm";
 import PropTypes from "prop-types";
+import { useFirestore } from 'react-redux-firebase';
 
 function EditMusicForm (props) {
+
+  const firestore = useFirestore();
+
   const { music } = props;
 
   function handleEditMusicFormSubmission(event) {
     event.preventDefault();
-    props.onEditMusic({
+    props.onEditMusic();
+    const propertiesToUpdate = {
       trackName: event.target.trackName.value,
       editName: event.target.editName.value,
       actName: event.target.actName.value,
@@ -25,7 +30,8 @@ function EditMusicForm (props) {
       styles: event.target.styles.value,
       descriptionTags: event.target.descriptionTags.value, 
       id: music.id
-    });
+    }
+    return firestore.update({collection: 'musics', doc: music.id }, propertiesToUpdate)
   }
 
   return (
