@@ -16,7 +16,8 @@ function MusicDetail(props){
       <h3>{music.releaseYear}</h3>
       <h3>{music.labeName}</h3>
       <h3>{music.labelNumber}</h3>
-      <h3>{music.trackLength}</h3>
+      <h3>{music.trackLengthMinutes}</h3>
+      <h3>{music.trackLengthSeconds}</h3>
       <h3>{music.bpm}</h3>
       <h3>{music.format}</h3>
       <h3>{music.genre}</h3>

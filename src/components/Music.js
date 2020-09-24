@@ -8,18 +8,6 @@ function Music(props){
         <h3>{props.trackName}</h3>
         <h3>{props.editName}</h3>
         <h3>{props.actName}</h3>
-        <h3>{props.artistNames}</h3>
-        <h3>{props.featureNames}</h3>
-        <h3>{props.releaseName}</h3>
-        <h3>{props.releaseYear}</h3>
-        <h3>{props.labeName}</h3>
-        <h3>{props.labelNumber}</h3>
-        <h3>{props.trackLength}</h3>
-        <h3>{props.bpm}</h3>
-        <h3>{props.format}</h3>
-        <h3>{props.genre}</h3>
-        <h3>{props.styles}</h3>
-        <h3>{props.descriptionTags}</h3>
 
       </div>
       <hr/>
@@ -34,11 +22,12 @@ Music.propTypes = {
   featureNames: PropTypes.string,
   artistNames: PropTypes.string,
   releaseName: PropTypes.string,
-  releaseYear: PropTypes.string,
+  releaseYear: PropTypes.number,
   labelName: PropTypes.string,
   labelNumber: PropTypes.string,
-  trackLength: PropTypes.string,
-  bpm: PropTypes.string,
+  trackLengthMinutes: PropTypes.number,
+  trackLengthSeconds: PropTypes.number,
+  bpm: PropTypes.number,
   format: PropTypes.string,
   genre: PropTypes.string,
   styles: PropTypes.string,

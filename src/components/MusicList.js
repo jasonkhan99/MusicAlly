@@ -18,7 +18,8 @@ function MusicList(props) {
           releaseYear = { music.releaseYear }
           labelName = { music.labeName }
           labelNumber = { music.labelNumber }
-          trackLength = { music.trackLength }
+          trackLengthMinutes = { music.trackLengthMinutes }
+          trackLengthSeconds = { music.trackLengthSeconds }
           bpm = { music.bpm }
           format = { music.format }
           genre = { music.genre }
