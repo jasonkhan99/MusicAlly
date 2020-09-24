@@ -2,12 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import Music from "./Music";
 
-function MusicList(props){
+function MusicList(props) {
   return (
     <React.Fragment>
       <hr/>
-      {Object.values(props.musicList).map((music) => {
-        return <Music
+      {Object.values(props.musicList).map((music) =>
+        <Music
           whenMusicClicked = { props.onMusicSelection }
           trackName = { music.trackName } 
           editName = { music.editName }
@@ -25,8 +25,9 @@ function MusicList(props){
           styles = { props.styles }
           descriptionTags = { props.descriptionTags } 
           id = { music.id }
-          key = { music.id } />
-      })}
+          key = { music.id } 
+        />
+      )}
     </React.Fragment>
   );
 }
