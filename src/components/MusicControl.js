@@ -30,12 +30,10 @@ class MusicControl extends React.Component {
     }
   }
 
-  handleAddingNewMusicToList = (newMusic) => {
+  handleAddingNewMusicToList = () => {
     const { dispatch } = this.props;
-    const action = a.addMusic(newMusic)
+    const action = a.toggleForm();
     dispatch(action);
-    const action2 = a.toggleForm();
-    dispatch(action2);
   }
 
   handleChangingSelectedMusic = (id) => {
@@ -47,15 +45,15 @@ class MusicControl extends React.Component {
     this.setState({editing: true});
   }
 
-  handleEditingMusicInList = (musicToEdit) => {
-    const { dispatch } = this.props;
-    const action = a.addMusic(musicToEdit);
-    dispatch(action);
-    this.setState({
-      editing: false,
-      selectedMusic: null
-    });
-  }
+  // handleEditingMusicInList = (musicToEdit) => {
+  //   const { dispatch } = this.props;
+  //   const action = a.addMusic(musicToEdit);
+  //   dispatch(action);
+  //   this.setState({
+  //     editing: false,
+  //     selectedMusic: null
+  //   });
+  // }
 
   handleDeletingMusic = (id) => {
     const { dispatch } = this.props;
