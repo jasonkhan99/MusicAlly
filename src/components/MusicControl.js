@@ -66,15 +66,12 @@ class MusicControl extends React.Component {
     this.setState({editing: true});
   }
 
-  // handleEditingMusicInList = (musicToEdit) => {
-  //   const { dispatch } = this.props;
-  //   const action = a.addMusic(musicToEdit);
-  //   dispatch(action);
-  //   this.setState({
-  //     editing: false,
-  //     selectedMusic: null
-  //   });
-  // }
+  handleEditingMusicInList = () => {
+    this.setState({
+      editing: false,
+      selectedMusic: null
+    });
+  }
 
   handleDeletingMusic = (id) => {
     const { dispatch } = this.props;
