@@ -37,7 +37,7 @@ class MusicControl extends React.Component {
     dispatch(action);
   }
 
-  handleChangingSelectedmusic = (id) => {
+  handleChangingSelectedMusic = (id) => {
     this.props.firestore.get({collection: 'musics', doc: id}).then((music) => {
       const firestoreMusic = {
         trackName: music.get('trackName'),
@@ -112,11 +112,8 @@ MusicControl.propTypes = {
   masterMusicList: PropTypes.object
 };
 
-// get rid of
-
 const mapStateToProps = state => {
   return {
-    masterMusicList: state.masterMusicList,
     formVisibleOnPage: state.formVisibleOnPage
   }
 }
