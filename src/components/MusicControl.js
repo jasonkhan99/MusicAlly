@@ -6,7 +6,7 @@ import EditMusicForm from './EditMusicForm';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import * as a from './../actions';
-import { withFirestore } from 'react-redux-firebase';
+import { withFirestore, isLoaded } from 'react-redux-firebase';
 
 class MusicControl extends React.Component {
 
@@ -79,32 +79,49 @@ class MusicControl extends React.Component {
   }
 
   render(){
-    let currentlyVisibleState = null;
-    let buttonText = null;
-    if (this.state.editing ) {      
-      currentlyVisibleState = <EditMusicForm music = {this.state.selectedMusic} onEditMusic = {this.handleEditingMusicInList} />
-      buttonText = "Return to Music List";
-    } else if (this.state.selectedMusic != null) {
-      currentlyVisibleState = 
-      <MusicDetail 
-        music = {this.state.selectedMusic} 
-        onClickingDelete = {this.handleDeletingMusic} 
-        onClickingEdit = {this.handleEditClick} />
-      buttonText = "Return to Music List";
-    } else if (this.props.formVisibleOnPage) {
-      currentlyVisibleState = <NewMusicForm onNewMusicCreation={this.handleAddingNewMusicToList}  />;
-      buttonText = "Return to Music List";
-    } else {
-      currentlyVisibleState = <MusicList musicList={this.props.masterMusicList} onMusicSelection={this.handleChangingSelectedMusic} />;
-      buttonText = "Add Music";
+    const auth = this.props.firebase.auth();
+    if (!isLoaded(auth)) {
+      return (
+        <React.Fragment>
+          <h1>Loading...</h1>
+        </React.Fragment>
+      )
     }
+    if ((isLoaded(auth)) && (auth.currentUser == null)) {
+      return (
+        <React.Fragment>
+          <h1>You must be signed in to access MusicAlly.</h1>
+        </React.Fragment>
+      )
+    }
+    if ((isLoaded(auth)) && (auth.currentUser != null)) {
+      let currentlyVisibleState = null;
+      let buttonText = null;
+      if (this.state.editing ) {      
+        currentlyVisibleState = <EditMusicForm music = {this.state.selectedMusic} onEditMusic = {this.handleEditingMusicInList} />
+        buttonText = "Return to Music List";
+      } else if (this.state.selectedMusic != null) {
+        currentlyVisibleState = 
+        <MusicDetail 
+          music = {this.state.selectedMusic} 
+          onClickingDelete = {this.handleDeletingMusic} 
+          onClickingEdit = {this.handleEditClick} />
+        buttonText = "Return to Music List";
+      } else if (this.props.formVisibleOnPage) {
+        currentlyVisibleState = <NewMusicForm onNewMusicCreation={this.handleAddingNewMusicToList}  />;
+        buttonText = "Return to Music List";
+      } else {
+        currentlyVisibleState = <MusicList musicList={this.props.masterMusicList} onMusicSelection={this.handleChangingSelectedMusic} />;
+        buttonText = "Add Music";
+      }
 
-    return (
-      <React.Fragment>
-        {currentlyVisibleState}
-        <button onClick={this.handleClick}>{buttonText}</button>
-      </React.Fragment>
-    );
+      return (
+        <React.Fragment>
+          {currentlyVisibleState}
+          <button onClick={this.handleClick}>{buttonText}</button>
+        </React.Fragment>
+      );
+    }
   }
 }
 
