@@ -1,7 +1,7 @@
 import React from "react";
 import ReusableForm from "./ReusableForm";
 import PropTypes from "prop-types";
-import { useFirestore } from 'react-redux-firebase';
+import { FirebaseReducer, useFirestore } from 'react-redux-firebase';
 
 function EditMusicForm (props) {
 
@@ -29,7 +29,8 @@ function EditMusicForm (props) {
       genre: event.target.genre.value,
       styles: event.target.styles.value,
       descriptionTags: event.target.descriptionTags.value, 
-      id: music.id
+      id: music.id,
+      userId: firebase.auth().currentUser.uid
     }
     return firestore.update({collection: 'musics', doc: music.id }, propertiesToUpdate)
   }
