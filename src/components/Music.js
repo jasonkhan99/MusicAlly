@@ -8,9 +8,8 @@ function Music(props){
         <h3>{props.trackName}</h3>
         <h3>{props.editName}</h3>
         <h3>{props.actName}</h3>
-
+        <hr/>
       </div>
-      <hr/>
     </React.Fragment>
   );
 }

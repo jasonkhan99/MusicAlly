@@ -30,7 +30,7 @@ function EditMusicForm (props) {
       styles: event.target.styles.value,
       descriptionTags: event.target.descriptionTags.value, 
       id: music.id,
-      userId: firebase.auth().currentUser.uid
+      userId: music.userId
     }
     return firestore.update({collection: 'musics', doc: music.id }, propertiesToUpdate)
   }

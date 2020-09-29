@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import ReusableForm from "./ReusableForm";
 import { useFirestore } from 'react-redux-firebase';
+import firebase from 'firebase/app';
 
 function NewMusicForm(props){
 
@@ -27,6 +28,7 @@ function NewMusicForm(props){
         format: event.target.format.value,
         genre: event.target.genre.value,
         styles: event.target.styles.value,
+        userId: firebase.auth().currentUser.uid,
         descriptionTags: event.target.descriptionTags.value,
       }
     );

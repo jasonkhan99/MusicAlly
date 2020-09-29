@@ -45,7 +45,7 @@ function MusicList(props) {
   } else {
     return (
       <React.Fragment>
-        <h3>Loading...</h3>
+        <h3>No music in list</h3>
       </React.Fragment>
     )
   }

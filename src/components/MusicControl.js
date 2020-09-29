@@ -56,6 +56,7 @@ class MusicControl extends React.Component {
         genre: music.get('genre'),
         styles: music.get('styles'),
         descriptionTags: music.get('descriptionTags'),
+        userId: music.userId,
         id: music.id
       }
       this.setState({selectedMusic: firestoreMusic });
