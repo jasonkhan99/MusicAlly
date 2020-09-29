@@ -34,7 +34,8 @@ function MusicList(props) {
             format = { music.format }
             genre = { music.genre }
             styles = { music.styles }
-            descriptionTags = { music.descriptionTags } 
+            descriptionTags = { music.descriptionTags }
+            userId = { music.userId }
             id = { music.id }
             key = { music.id } 
           />
