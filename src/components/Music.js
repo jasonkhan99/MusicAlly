@@ -33,6 +33,7 @@ Music.propTypes = {
   styles: PropTypes.string,
   descriptionTags: PropTypes.string,
   id: PropTypes.string,
+  userId: PropTypes.string,
   whenMusicClicked: PropTypes.func
 };
 
